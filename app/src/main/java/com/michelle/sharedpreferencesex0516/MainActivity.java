@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button button;
     private EditText ed_pre;
+    private TextView tvAccountError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ed_pre = findViewById(R.id.Pre);
         button = findViewById(R.id.button);
+        tvAccountError = findViewById(R.id.tv_account_error);
+        Intent intent = new Intent(MainActivity.this, Store.class);
         //預設鎖住按鈕
         button.setEnabled(false);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                startActivity(intent);
             }
         });
 
@@ -53,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 if(isIdNoFormat(temp.toString())) {
                     button.setEnabled(true);
                     button.setBackground(getResources().getDrawable(R.drawable.login_b_unlock));
+                    tvAccountError.setVisibility(View.GONE);
+                } else {
+                    tvAccountError.setVisibility(View.VISIBLE);
                 }
             } else {
                 button.setEnabled(false);

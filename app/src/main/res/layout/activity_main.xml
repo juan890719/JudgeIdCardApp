@@ -55,4 +55,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <TextView
+        android:id="@+id/tv_account_error"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:layout_marginTop="16dp"
+        android:text="格式有誤，請重新輸入"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="#E43F33"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Pre"
+        tools:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
